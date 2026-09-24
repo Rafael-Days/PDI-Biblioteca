@@ -13,6 +13,10 @@ public class LivroDTO
     private String autor;
     private String editora;
     private Integer paginas;
+    private boolean disponivel;
+
+    public LivroDTO() {
+    }
 
     public LivroDTO(Livro livro) {
         this.titulo = livro.getTitulo();
@@ -20,5 +24,6 @@ public class LivroDTO
         this.autor = livro.getAutor();
         this.editora = livro.getEditora();
         this.paginas = livro.getPaginas();
+        this.disponivel = true;
     }
 }

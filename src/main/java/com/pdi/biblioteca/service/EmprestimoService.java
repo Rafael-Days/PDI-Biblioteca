@@ -16,15 +16,4 @@ public class EmprestimoService {
     @Autowired
     private EmprestimoRepository repository;
 
-    public List<LivroDTO> listarLivros() {
-        return repository.findAll()
-                .stream()
-                .map(LivroDTO::new)
-                .toList();
-    }
-
-    public LivroDTO buscarLivro(Long id){
-        Livro livro = repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-        return new LivroDTO(livro);
-    }
 }
