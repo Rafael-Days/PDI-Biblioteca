@@ -2,6 +2,7 @@ package com.pdi.biblioteca.controler;
 
 import com.pdi.biblioteca.model.dto.EmprestimoDTO;
 import com.pdi.biblioteca.model.dto.LivroDTO;
+import com.pdi.biblioteca.model.entity.Emprestimo;
 import com.pdi.biblioteca.model.entity.Livro;
 import com.pdi.biblioteca.repository.EmprestimoRepository;
 import com.pdi.biblioteca.service.EmprestimoService;
@@ -18,6 +19,11 @@ public class EmprestimoController {
 
     @Autowired
     private EmprestimoService service;
+
+    @GetMapping
+    public List<EmprestimoDTO> ListarEmprestimo(){
+        return service.listarEmprestimos();
+    }
 
     @PostMapping
     public EmprestimoDTO cadastrarEmprestimo(
